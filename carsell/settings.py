@@ -26,11 +26,12 @@ SECRET_KEY = 'django-insecure-v%y0-pz1picu&nna*4s_kg!ufc%^35)a3f1u23l^%56$*h2%1n
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+LOGIN_REDIRECT_URL = 'dashboard'
 
 # Application definition
 
 INSTALLED_APPS = [
+    'contacts.apps.ContactsConfig',
     'accounts.apps.AccountsConfig',
     'cars.apps.CarsConfig',
     'pages.apps.PagesConfig',
@@ -42,6 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'ckeditor',
     'django.contrib.humanize',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    #providers
+    'allauth.socialaccount.providers.facebook',
+    'allauth.socialaccount.providers.google',
 ]
 
 MIDDLEWARE = [
@@ -145,3 +153,10 @@ MESSAGE_TAGS = {
     messages.INFO: "danger",
 
 }
+SITE_ID=1
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'khairul9215@gmail.com'
+EMAIL_HOST_PASSWORD = '#YU5swarup#'
+EMAIL_USE_TLS = True

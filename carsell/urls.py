@@ -30,4 +30,6 @@ urlpatterns = [
     path('<int:id>/', views.car_detail, name='car_detail'),
     path('search/', views.search, name='search'),
     path('accounts/', include('accounts.urls')),
+    path('socialaccounts/', include('allauth.urls')),
+    path('contacts/', include('contacts.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
